@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "leetcode",
+  "name": "letscode",
   "version": "1.0.0",
   "main": "find-pivot-index.js",
   "scripts": {
