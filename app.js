@@ -33,10 +33,10 @@ async function runFile(filePath) {
 }
 
 /**
- * Function to run all JavaScript files in the tasks directory.
+ * Function to run all JavaScript files in the scripts directory.
  */
 async function runAllTasks() {
-    const tasksDir = path.join(process.cwd(), 'tasks');
+    const tasksDir = path.join(process.cwd(), 'scripts');
     
     fs.readdir(tasksDir, (err, files) => {
         if (err) {
@@ -46,7 +46,7 @@ async function runAllTasks() {
 
         const jsFiles = files.filter(file => file.endsWith('.js'));
         if (jsFiles.length === 0) {
-            console.log(chalk.yellow('No JavaScript files found in the tasks directory.'));
+            console.log(chalk.yellow('No JavaScript files found in the scripts directory.'));
             return;
         }
 
