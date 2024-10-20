@@ -1,4 +1,3 @@
-// runner.js
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
@@ -24,7 +23,6 @@ async function runFile(filePath) {
 
         console.time(`Execution Time for ${path.basename(fullPath)}`);
         
-        // Convert the full path to a file URL
         const fileUrl = `file://${fullPath.replace(/\\/g, '/')}`;
         await import(fileUrl);
         
@@ -46,7 +44,6 @@ async function runAllTasks() {
             return;
         }
 
-        // Filter and run only .js files
         const jsFiles = files.filter(file => file.endsWith('.js'));
         if (jsFiles.length === 0) {
             console.log(chalk.yellow('No JavaScript files found in the tasks directory.'));
@@ -59,5 +56,4 @@ async function runAllTasks() {
     });
 }
 
-// Start running all tasks
 runAllTasks();
